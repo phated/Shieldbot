@@ -8,27 +8,29 @@ void setup(){
 }
 
 void loop(){
-  leftSquare();  
+  //leftSquare();  
+  //leftCircle();
+  infinity();
 }
 
 void leftSquare(){
-  shieldbot.forward();
+  shieldbot.drive(127,127); //straight forward
   delay(750);
-  shieldbot.left(255);
-  delay(400);
+  shieldbot.drive(-128,127);   //turn left on a dime
+  delay(325);  //to turn 90, it depends on surface, ~450 on hard floors, ~325 on carpet
 }
 
 void infinity(){
   leftCircle();
-  delay(3500);
+  delay(4800);
   rightCircle();
-  delay(3500);
+  delay(4800);
 }
 
 void leftCircle(){
-  shieldbot.left(100);
+  shieldbot.drive(25,127);
 }
 
 void rightCircle(){
-  shieldbot.right(100);
+  shieldbot.drive(127,25);
 }

@@ -75,10 +75,16 @@ int Shieldbot::readS5(){
 	return digitalRead(lyfind5);
 }
 
+void Shieldbot::drive(char left, char right){
+	rightMotor(right);
+	leftMotor(left);
+}
+
+//char is 128 to 127
 //mag is the direction to spin the right motor
 //-128 backwards all the way
 //0 dont move
-//128 forwards all the way
+//127 forwards all the way
 void Shieldbot::rightMotor(char mag){
   int actualSpeed = 0;  
   if(mag >0){ //forward
@@ -91,8 +97,7 @@ void Shieldbot::rightMotor(char mag){
     digitalWrite(pinI2,LOW);//turn right motor clockwise
   }else if(mag == 0){ //neutral
     Serial.println("nuetral right");
-    digitalWrite(pinI1,HIGH);
-    digitalWrite(pinI2,HIGH);//lock right motor
+	stopRight();
   }else { //meaning backwards
     float ratio = (float)abs(mag)/128;
     actualSpeed = ratio*speedmotorA;
@@ -116,8 +121,7 @@ void Shieldbot::leftMotor(char mag){
     digitalWrite(pinI4,LOW);//turn left motor counter-clockwise
   }else if(mag == 0){ //neutral
     Serial.println("nuetral left");
-    digitalWrite(pinI3,HIGH);
-    digitalWrite(pinI4,HIGH);//lock left motor
+	stopLeft();
   }else { //meaning backwards
     float ratio = (float)abs(mag)/128;
     actualSpeed = ratio*speedmotorB;
@@ -130,13 +134,13 @@ void Shieldbot::leftMotor(char mag){
   }
 }
 
+
 //direction true is forward, false is backward
-//Turns right, mag varies from wide right (0) to tight right (255)
-//direction is true for forward, false for backward, defaults to true
-//tight right (255) maps to left motor all the way forwards, right motor all teh way backwards
-//half right (128) maps to left motor all the way forwards, right motor off
-//wide right (0) maps to left motor all the way forwards, right motor all the way forwards
-void Shieldbot::right(int mag, direction dir){
+//Turns left, mag varies from wide left (0) to tight left (255)
+//tight left (255) maps to Right motor all the way forwards, left motor all teh way backwards
+//half left (128) maps to Right motor all the way forwards, left motor off
+//wide left (0) maps to right motor all the way forwards, left motor all the way forwards
+void Shieldbot::left(int mag, direction dir){
   
   Serial.print("mag: ");
   Serial.println(mag);
@@ -160,11 +164,12 @@ void Shieldbot::right(int mag, direction dir){
 }
 
 //direction true is forward, false is backward
-//Turns left, mag varies from wide left (0) to tight left (255)
-//tight left (255) maps to Right motor all the way forwards, left motor all teh way backwards
-//half left (128) maps to Right motor all the way forwards, left motor off
-//wide left (0) maps to right motor all the way forwards, left motor all the way forwards
-void Shieldbot::left(int mag, direction dir){
+//Turns right, mag varies from wide right (0) to tight right (255)
+//direction is true for forward, false for backward, defaults to true
+//tight right (255) maps to left motor all the way forwards, right motor all teh way backwards
+//half right (128) maps to left motor all the way forwards, right motor off
+//wide right (0) maps to left motor all the way forwards, right motor all the way forwards
+void Shieldbot::right(int mag, direction dir){
   
   Serial.print("mag: ");
   Serial.println(mag);
@@ -199,16 +204,18 @@ void Shieldbot::backward(){
   rightMotor(-127); 
 }
 
-void Shieldbot::fastStop(){
-  digitalWrite(pinI1,HIGH);
-  digitalWrite(pinI2,HIGH);//turn DC Motor A move anticlockwise
-  digitalWrite(pinI3,HIGH);
-  digitalWrite(pinI4,HIGH);//turn DC Motor B move clockwise
+void Shieldbot::stop(){
+	fastStopLeft();
+	fastStopRight();
 }
 
-void Shieldbot::stop(){
-     digitalWrite(speedpinA,LOW);// Unenble the pin, to stop the motor. this should be done to avid damaging the motor. 
-     digitalWrite(speedpinB,LOW);
-     delay(1000);
+void Shieldbot::stopLeft(){
+  digitalWrite(pinI3,LOW);
+  digitalWrite(pinI4,LOW);//turn DC Motor B move clockwise
+}
+
+void Shieldbot::stopRight(){
+  digitalWrite(pinI1,LOW);
+  digitalWrite(pinI2,LOW);//turn DC Motor A move anticlockwise
 
 }

@@ -35,10 +35,12 @@ class Shieldbot
 	void leftMotor(char);
 	void right(int, direction dir = FORWARD);
 	void left(int, direction dir = FORWARD);
+	void drive(char, char);
 	void forward();
 	void backward();
-	void fastStop();
 	void stop();
+	void stopRight();
+	void stopLeft();
 
 };
 
