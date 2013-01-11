@@ -40,6 +40,9 @@ class Shieldbot
 	void stop();
 	void stopRight();
 	void stopLeft();
+	void fastStopLeft();
+	void fastStopRight();
+	void fastStop();
 
 };
 

@@ -155,11 +155,27 @@ void Shieldbot::stop(){
 }
 
 void Shieldbot::stopLeft(){
+  analogWrite(speedPinLeft,0);
+}
+
+void Shieldbot::stopRight(){
+  analogWrite(speedPinRight,0);
+}
+
+//may be dangerous to motor if reverse current into hbridge exceeds 2A
+void Shieldbot::fastStopLeft(){
   digitalWrite(left1,LOW);
   digitalWrite(left2,LOW);//turn DC Motor B move clockwise
 }
 
-void Shieldbot::stopRight(){
+//may be dangerous to motor if reverse current into hbridge exceeds 2A
+void Shieldbot::fastStopRight(){
   digitalWrite(right1,LOW);
   digitalWrite(right2,LOW);//turn DC Motor A move anticlockwise
+}
+
+//may be dangerous to motor if reverse current into hbridge exceeds 2A
+void Shieldbot::fastStop(){
+	fastStopRight();
+	fastStopLeft();
 }
