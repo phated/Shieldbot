@@ -47,6 +47,11 @@ void Shieldbot::setMaxSpeed(int both){
   setMaxRightSpeed(both);
 }
 
+void Shieldbot::setMaxSpeed(int left, int right){
+  setMaxLeftSpeed(left);
+  setMaxRightSpeed(right);
+}
+
 void Shieldbot::setMaxLeftSpeed(int left){
   speedmotorB=left;
 }
@@ -134,7 +139,7 @@ void Shieldbot::leftMotor(char mag){
   }
 }
 
-
+/*
 //direction true is forward, false is backward
 //Turns left, mag varies from wide left (0) to tight left (255)
 //tight left (255) maps to Right motor all the way forwards, left motor all teh way backwards
@@ -193,7 +198,7 @@ void Shieldbot::right(int mag, direction dir){
   rightMotor(right); //minimum is 0
   leftMotor(left); //max is 127
 }
-
+*/
 void Shieldbot::forward(){
   leftMotor(127);
   rightMotor(127); 
@@ -205,8 +210,8 @@ void Shieldbot::backward(){
 }
 
 void Shieldbot::stop(){
-	fastStopLeft();
-	fastStopRight();
+	stopLeft();
+	stopRight();
 }
 
 void Shieldbot::stopLeft(){

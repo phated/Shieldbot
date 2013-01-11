@@ -29,6 +29,7 @@ class Shieldbot
 	int readS4();
 	int readS5();
 	void setMaxSpeed(int);
+	void setMaxSpeed(int, int);
 	void setMaxLeftSpeed(int);
 	void setMaxRightSpeed(int);
 	void rightMotor(char);

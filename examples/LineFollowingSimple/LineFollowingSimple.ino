@@ -3,7 +3,7 @@
 #include <Shieldbot.h>
 
 Shieldbot shieldbot = Shieldbot();
-int D1,D2,D3,D4,D5;
+int S1,S2,S3,S4,S5;
 
 void setup(){
   Serial.begin(9600);
@@ -11,11 +11,11 @@ void setup(){
 }
 
 void loop(){
-  D1 = shieldbot.readS1();
-  D2 = shieldbot.readS2();
-  D3 = shieldbot.readS3();
-  D4 = shieldbot.readS4();
-  D5 = shieldbot.readS5();
+  S1 = shieldbot.readS1();
+  S2 = shieldbot.readS2();
+  S3 = shieldbot.readS3();
+  S4 = shieldbot.readS4();
+  S5 = shieldbot.readS5();
 
   Serial.print("D5: ");
   Serial.print(D5);
@@ -35,7 +35,7 @@ void loop(){
     shieldbot.stop();
     delay(1000);
   }else if((D1 == LOW) || (D2 == LOW)){
-    shieldbot.right(255);
+    shieldbot.drive();
     delay(100);
   }else if((D5 == LOW) || (D4 == LOW)){
     shieldbot.left(255);
