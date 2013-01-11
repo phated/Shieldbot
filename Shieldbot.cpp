@@ -95,8 +95,8 @@ void Shieldbot::rightMotor(char mag){
   if(mag >0){ //forward
     float ratio = (float)mag/128;
     actualSpeed = (int)(ratio*speedmotorA); //define your speed based on global speed
-    Serial.print("forward right: ");
-    Serial.println(actualSpeed);
+    //Serial.print("forward right: ");
+    //Serial.println(actualSpeed);
     analogWrite(speedpinA,actualSpeed);
     digitalWrite(pinI1,HIGH);
     digitalWrite(pinI2,LOW);//turn right motor clockwise
@@ -106,8 +106,8 @@ void Shieldbot::rightMotor(char mag){
   }else { //meaning backwards
     float ratio = (float)abs(mag)/128;
     actualSpeed = ratio*speedmotorA;
-    Serial.print("backward right: ");
-    Serial.println(actualSpeed);
+    //Serial.print("backward right: ");
+    //Serial.println(actualSpeed);
     analogWrite(speedpinA,actualSpeed);
     digitalWrite(pinI1,LOW);
     digitalWrite(pinI2,HIGH);//turn right motor counterclockwise
@@ -119,8 +119,8 @@ void Shieldbot::leftMotor(char mag){
   if(mag >0){ //forward
     float ratio = (float)(mag)/128;
     actualSpeed = (int)(ratio*speedmotorB); //define your speed based on global speed
-    Serial.print("forward left: ");
-    Serial.println(actualSpeed);
+    //Serial.print("forward left: ");
+    //Serial.println(actualSpeed);
     analogWrite(speedpinB,actualSpeed);
     digitalWrite(pinI3,HIGH);
     digitalWrite(pinI4,LOW);//turn left motor counter-clockwise
@@ -130,8 +130,8 @@ void Shieldbot::leftMotor(char mag){
   }else { //meaning backwards
     float ratio = (float)abs(mag)/128;
     actualSpeed = ratio*speedmotorB;
-    Serial.print("backward left: ");
-    Serial.println(actualSpeed);
+    //Serial.print("backward left: ");
+    //Serial.println(actualSpeed);
     analogWrite(speedpinB,actualSpeed);
     digitalWrite(pinI3,LOW);
     digitalWrite(pinI4,HIGH
