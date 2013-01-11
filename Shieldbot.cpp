@@ -12,6 +12,8 @@
 // include this library's description file
 #include "Shieldbot.h"
 
+#define SHIELDBOTDEBUG 0
+
 #define right1 5			//define I1 interface
 #define speedPinRight 6  	//enable right motor (bridge A)
 #define right2 7      		//define I2 interface 
@@ -96,19 +98,25 @@ void Shieldbot::rightMotor(char mag){
   if(mag >0){ //forward
     float ratio = (float)mag/128;
     actualSpeed = (int)(ratio*speedmotorA); //define your speed based on global speed
-    //Serial.print("forward right: ");
-    //Serial.println(actualSpeed);
+	#if SHIELDBOTDEBUG
+      Serial.print("forward right: ");
+      Serial.println(actualSpeed);
+	#endif
     analogWrite(speedPinRight,actualSpeed);
     digitalWrite(right1,HIGH);
     digitalWrite(right2,LOW);//turn right motor clockwise
   }else if(mag == 0){ //neutral
-    Serial.println("nuetral right");
+	#if SHIELDBOTDEBUG
+      Serial.println("nuetral right");
+	#endif
 	stopRight();
   }else { //meaning backwards
     float ratio = (float)abs(mag)/128;
     actualSpeed = ratio*speedmotorA;
-    //Serial.print("backward right: ");
-    //Serial.println(actualSpeed);
+	#if SHIELDBOTDEBUG
+      Serial.print("backward right: ");
+      Serial.println(actualSpeed);
+	#endif
     analogWrite(speedPinRight,actualSpeed);
     digitalWrite(right1,LOW);
     digitalWrite(right2,HIGH);//turn right motor counterclockwise
@@ -121,19 +129,25 @@ void Shieldbot::leftMotor(char mag){
   if(mag >0){ //forward
     float ratio = (float)(mag)/128;
     actualSpeed = (int)(ratio*speedmotorB); //define your speed based on global speed
-    //Serial.print("forward left: ");
-    //Serial.println(actualSpeed);
+	#if SHIELDBOTDEBUG
+      Serial.print("forward left: ");
+      Serial.println(actualSpeed);
+	#endif
     analogWrite(speedPinLeft,actualSpeed);
     digitalWrite(left1,HIGH);
     digitalWrite(left2,LOW);//turn left motor counter-clockwise
   }else if(mag == 0){ //neutral
-    Serial.println("nuetral left");
+	#if SHIELDBOTDEBUG
+      Serial.println("nuetral left");
+	#endif
 	stopLeft();
   }else { //meaning backwards
     float ratio = (float)abs(mag)/128;
     actualSpeed = ratio*speedmotorB;
-    //Serial.print("backward left: ");
-    //Serial.println(actualSpeed);
+	#if SHIELDBOTDEBUG
+      Serial.print("backward left: ");
+      Serial.println(actualSpeed);
+	#endif
     analogWrite(speedPinLeft,actualSpeed);
     digitalWrite(left1,LOW);
     digitalWrite(left2,HIGH);//turn left motor counterclockwise
