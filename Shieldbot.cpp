@@ -28,17 +28,17 @@ int speedmotorB = 255; //define the speed of motorB
 
 Shieldbot::Shieldbot()
 {
-	pinMode(right1,OUTPUT);
-	pinMode(right2,OUTPUT);
-	pinMode(speedPinRight,OUTPUT);
-	pinMode(left1,OUTPUT);
-	pinMode(left2,OUTPUT);
-	pinMode(speedPinLeft,OUTPUT);
-	pinMode(finder1,INPUT);
-	pinMode(finder2,INPUT);
-	pinMode(finder3,INPUT);
-	pinMode(finder4,INPUT);
-	pinMode(finder5,INPUT);
+  pinMode(right1,OUTPUT);
+  pinMode(right2,OUTPUT);
+  pinMode(speedPinRight,OUTPUT);
+  pinMode(left1,OUTPUT);
+  pinMode(left2,OUTPUT);
+  pinMode(speedPinLeft,OUTPUT);
+  pinMode(finder1,INPUT);
+  pinMode(finder2,INPUT);
+  pinMode(finder3,INPUT);
+  pinMode(finder4,INPUT);
+  pinMode(finder5,INPUT);
 }
 
 //sets same max speed to both motors
@@ -61,28 +61,28 @@ void Shieldbot::setMaxRightSpeed(int right){
 }
 
 int Shieldbot::readS1(){
-	return digitalRead(finder1);
+  return digitalRead(finder1);
 }
 
 int Shieldbot::readS2(){
-	return digitalRead(finder2);
+  return digitalRead(finder2);
 }
 
 int Shieldbot::readS3(){
-	return digitalRead(finder3);
+  return digitalRead(finder3);
 }
 
 int Shieldbot::readS4(){
-	return digitalRead(finder4);
+  return digitalRead(finder4);
 }
 
 int Shieldbot::readS5(){
-	return digitalRead(finder5);
+  return digitalRead(finder5);
 }
 
 void Shieldbot::drive(char left, char right){
-	rightMotor(right);
-	leftMotor(left);
+  rightMotor(right);
+  leftMotor(left);
 }
 
 //char is 128 to 127
