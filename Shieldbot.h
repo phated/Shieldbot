@@ -33,8 +33,6 @@ class Shieldbot
 	void setMaxRightSpeed(int);
 	void rightMotor(char);
 	void leftMotor(char);
-	void right(int, direction dir = FORWARD);
-	void left(int, direction dir = FORWARD);
 	void drive(char, char);
 	void forward();
 	void backward();

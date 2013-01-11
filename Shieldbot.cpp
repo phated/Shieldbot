@@ -200,8 +200,8 @@ void Shieldbot::forward(){
 }
 
 void Shieldbot::backward(){
-  leftMotor(-127);
-  rightMotor(-127); 
+  leftMotor(-128);
+  rightMotor(-128); 
 }
 
 void Shieldbot::stop(){
