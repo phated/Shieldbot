@@ -1,5 +1,5 @@
 /*
-  
+  Created to support the release of the Sheildbot from SeeedStudios
 
   Created by Jacob Rosenthal and Colin Ho, December 30, 2012.
   Released into the public domain.
@@ -18,10 +18,6 @@ class Shieldbot
 {
   // user-accessible "public" interface
   public:
-	enum direction {
-	  FORWARD,
-	  BACKWARD
-	};
 	Shieldbot();
 	int readS1();
 	int readS2();
