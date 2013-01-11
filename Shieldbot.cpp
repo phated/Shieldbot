@@ -1,5 +1,6 @@
 /*
-  
+  Created to support the release of the Sheildbot from SeeedStudios
+  http://www.seeedstudio.com/wiki/Shield_Bot
 
   Created by Jacob Rosenthal and Colin Ho, December 30, 2012.
   Released into the public domain.
