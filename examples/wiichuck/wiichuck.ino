@@ -2,6 +2,10 @@
  * from sparkfun to make your life easier 
  * https://www.sparkfun.com/products/9281
  *
+ * And finally you need the wiichuck library from 
+ * https://github.com/coopermaa/Wiichuck
+ * (click the little zip icon to download)
+ *
  * IMPORTANT NOTE: you MUST turn your A2 and A3 (S3 and S4) switches OFF to use
  * as the wiichuck adapter uses those for power and ground.
  */
