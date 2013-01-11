@@ -37,10 +37,10 @@ void loop(){
   
   int X1 = map(joy_x_axis, 26, 228, 127, -128);
   int Y = map(joy_y_axis, 24, 228, -128, 127);
-  int lVal = constrain(X1+Y, -128, 127);
+  int rVal = constrain(X1+Y, -128, 127);
   
   int X2 = map(joy_x_axis, 26, 228, -128, 127);
-  int rVal = constrain(X2+Y, -128, 127);
+  int lVal = constrain(X2+Y, -128, 127);
   
   shieldbot.leftMotor(lVal);
   shieldbot.rightMotor(rVal);
