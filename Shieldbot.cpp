@@ -11,17 +11,17 @@
 // include this library's description file
 #include "Shieldbot.h"
 
-#define right1 5      //define I1 interface
-#define speedPinRight 6  //enable right motor (bridge A)
-#define right2 7      //define I2 interface 
-#define left1 8      //define I3 interface 
-#define speedPinLeft 9  //enable motor B
-#define left2 10     //define I4 interface 
-#define finder1 A0   //define line finder S1
-#define finder2 A1   //define line finder S2
-#define finder3 A2   //define line finder S3
-#define finder4 A3   //define line finder S4
-#define finder5 4    //define line finder S5
+#define right1 5			//define I1 interface
+#define speedPinRight 6  	//enable right motor (bridge A)
+#define right2 7      		//define I2 interface 
+#define left1 8      		//define I3 interface 
+#define speedPinLeft 9  	//enable motor B
+#define left2 10     		//define I4 interface 
+#define finder1 A0   		//define line finder S1
+#define finder2 A1   		//define line finder S2
+#define finder3 A2   		//define line finder S3
+#define finder4 A3   		//define line finder S4
+#define finder5 4    		//define line finder S5
 
 int speedmotorA = 255; //define the speed of motorA
 int speedmotorB = 255; //define the speed of motorB
@@ -113,6 +113,7 @@ void Shieldbot::rightMotor(char mag){
     digitalWrite(right2,HIGH);//turn right motor counterclockwise
   }
 }
+
 //TODO shouldnt these share one function and just input the differences?
 void Shieldbot::leftMotor(char mag){
   int actualSpeed = 0;  
