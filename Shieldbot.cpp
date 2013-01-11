@@ -152,7 +152,7 @@ void Shieldbot::left(int mag, direction dir){
 	right = 127;
   }else{
   	left = map(mag,0,255,-128,127);
-	right = -127;
+	right = -128;
   }
   
   Serial.print("right turn: ");
@@ -183,7 +183,7 @@ void Shieldbot::right(int mag, direction dir){
 	left = 127;
   }else{
 	right = map(mag,0,255,-128,127);
-	left = -127;
+	left = -128;
   }
 
   Serial.print("left turn: ");
