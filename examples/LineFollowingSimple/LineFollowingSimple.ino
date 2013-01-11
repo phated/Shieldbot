@@ -1,13 +1,13 @@
 //Make sure the dip switches are turned ON, and none of your shields are using pins A0,A1,A2,A3 or D4
 
-#include <Shieldbot.h>
+#include <Shieldbot.h>	//includes the Shieldbot Library
 
-Shieldbot shieldbot = Shieldbot();
-int S1,S2,S3,S4,S5;
+Shieldbot shieldbot = Shieldbot();	//decares a Shieldbot object
+int S1,S2,S3,S4,S5;	//values to store state of sensors
 
 void setup(){
   Serial.begin(9600);//Begin serial comm for debugging
-  shieldbot.setMaxSpeed(50);//255 is max
+  shieldbot.setMaxSpeed(50,50);//255 is max, if one motor is faster than another, adjust values 
 }
 
 void loop(){
@@ -52,7 +52,5 @@ void loop(){
     delay(100);
   }else	//otherwise just go forward
     shieldbot.forward();
-	
-    
 }
 
