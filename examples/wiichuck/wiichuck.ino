@@ -1,6 +1,6 @@
 /* You need a nintendo wiichuck and you probably want one of these 
- * from sparkfun to make your life easier 
- * https://www.sparkfun.com/products/9281
+ * from Seeed to make connecting it easy!
+ * http://www.seeedstudio.com/depot/wiichuck-a-wiinunchuck-break-out-board-p-586.html?cPath=175_177
  *
  * And finally you need the wiichuck library from 
  * https://github.com/coopermaa/Wiichuck
