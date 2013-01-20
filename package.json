@@ -1,0 +1,10 @@
+{
+  "name": "node-shieldbot",
+  "version": "0.1.0",
+  "main": "src/shieldbot",
+  "dependencies": {
+    "johnny-five": "~0.5.14",
+    "q": "~0.8.12",
+    "when": "~1.7.1"
+  }
+}
