@@ -2,8 +2,6 @@ var five = require("johnny-five");
 
 var Shieldbot = require('../../src/shieldbot');
 
-var sequence = require('when/sequence');
-
 var leap = require('leapjs');
 
 var board = new five.Board();
@@ -22,6 +20,7 @@ board.on("ready", function() {
     if(frame.hands.length){
       var z = frame.hands[0].palmPosition[2];
       var velZ = frame.hands[0].palmVelocity[2];
+      /* jshint eqnull: true */
       if(prevZ == null){
         prevZ = z;
       }
