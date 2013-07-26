@@ -128,3 +128,23 @@ Returns a promise that is resolved after specified duration
 ```js
 shieldbot.turnRight(127, 1000);
 ```
+
+## Line Following
+
+The Shieldbot also has finders on the front (good for line following)
+
+We emit events when the finder values change
+
+### `finder.on` & `finder.off` - Emitted when the finder changes state to on or off
+
+Callbacks receive the pin number that changed
+
+```js
+shieldbot.on('finder.on', function(pin){
+  console.log('on', pin);
+});
+
+shieldbot.on('finder.off', function(pin){
+  console.log('off', pin);
+});
+```
