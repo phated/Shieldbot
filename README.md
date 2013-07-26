@@ -1,4 +1,4 @@
-# Shieldbot.js
+# shieldbot.js
 
 Control [Shieldbot](http://www.seeedstudio.com/wiki/Shield_Bot_V1.0) with JavaScript
 
