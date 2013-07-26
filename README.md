@@ -1,6 +1,8 @@
 # Shieldbot.js
 
-Control Shieldbot with JavaScript
+Control [Shieldbot](http://www.seeedstudio.com/wiki/Shield_Bot_V1.0) with JavaScript
+
+![Shieldbot](http://www.seeedstudio.com/wiki/images/thumb/0/05/Shield_Bot_5.jpg/800px-Shield_Bot_5.jpg)
 
 ## API
 
